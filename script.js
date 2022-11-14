@@ -18,7 +18,7 @@ function desktopCode() {
     $(this).find(contentWrapper).addClass("active");
 
     // set moving backgrounds to visible
-    $(backgrounds).css("opacity", "1");
+    $(backgrounds).css("display", "block");
 
     //hide all dropdown content
     $(ddContent).css("opacity", "0");
@@ -52,7 +52,7 @@ function desktopCode() {
 
   menuLink.on("mouseleave", function () {
     $(contentWrapper).removeClass("active");
-    $(backgrounds).css("opacity", "0");
+    $(backgrounds).css("display", "none");
     $(ddContent).css("opacity", "0");
   });
 }
@@ -60,7 +60,7 @@ function desktopCode() {
 function tabletCode() {
   //RESET
   menuLink.unbind();
-  $(backgrounds).css("opacity", "0");
+  $(backgrounds).css("display", "none");
   $(ddContent).css("opacity", "1");
 
   //TABLET

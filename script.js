@@ -1,3 +1,4 @@
+
 let linkBG = $(".menu_link_background");
 let contentBG = $(".menu_dropdown_background");
 let backgrounds = ".menu_dropdown_background, .menu_link_background";
@@ -189,15 +190,23 @@ function tabletCode() {
   });
 }
 
-function checkBreakpoint(x) {
-  if (x.matches) {
-    // desktop code here
-    desktopCode();
-  } else {
-    // tablet code here
-    tabletCode();
+let url = window.location.href
+
+if(url === "https://www.vouch.us/brex"){
+  
+  tabletCode();
+
+}else{
+  function checkBreakpoint(x) {
+    if (x.matches) {
+      // desktop code here
+      desktopCode();
+    } else {
+      // tablet code here
+      tabletCode();
+    }
   }
+  const matchMediaDesktop = window.matchMedia("(min-width: 1280px)");
+  checkBreakpoint(matchMediaDesktop);
+  matchMediaDesktop.addListener(checkBreakpoint);
 }
-const matchMediaDesktop = window.matchMedia("(min-width: 1280px)");
-checkBreakpoint(matchMediaDesktop);
-matchMediaDesktop.addListener(checkBreakpoint);

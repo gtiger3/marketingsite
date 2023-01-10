@@ -190,12 +190,11 @@ function tabletCode() {
   });
 }
 
-let url = window.location.href
 
-if(url === "https://www.vouch.us/brex"){
-  
+if(
+  $(".nav-container-new").hasClass('is--partner')
+){
   tabletCode();
-
 }else{
   function checkBreakpoint(x) {
     if (x.matches) {
